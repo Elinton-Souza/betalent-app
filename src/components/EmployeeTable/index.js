@@ -5,6 +5,7 @@ import './EmployeeTable.css';
 function EmployeeTable() {
   const [employees, setEmployees] = useState([]);
   const [search, setSearch] = useState('');
+  const [expanded, setExpanded] = useState(null);
 
   useEffect(() => {
     fetch('http://localhost:3000/employees')
@@ -18,6 +19,10 @@ function EmployeeTable() {
     emp.phone.includes(search)
   );
 
+  function toggleRow(id) {
+    setExpanded(expanded === id ? null : id);
+  }
+
   return (
     <div className="table-container">
       <div className="table-header">
@@ -30,22 +35,39 @@ function EmployeeTable() {
           <tr>
             <th>FOTO</th>
             <th>NOME</th>
-            <th>CARGO</th>
-            <th>DATA DE ADMISSÃO</th>
-            <th>TELEFONE</th>
+            <th className="hide-mobile">CARGO</th>
+            <th className="hide-mobile">DATA DE ADMISSÃO</th>
+            <th className="hide-mobile">TELEFONE</th>
+            <th className="show-mobile"></th>
           </tr>
         </thead>
         <tbody>
           {filtered.map(emp => (
-            <tr key={emp.id}>
-              <td>
-                <img src={emp.image} alt={emp.name} className="employee-photo" />
-              </td>
-              <td>{emp.name}</td>
-              <td>{emp.job}</td>
-              <td>{formatDate(emp.admission_date)}</td>
-              <td>{formatPhone(emp.phone)}</td>
-            </tr>
+            <>
+              <tr key={emp.id} onClick={() => toggleRow(emp.id)} className="table-row">
+                <td>
+                  <img src={emp.image} alt={emp.name} className="employee-photo" />
+                </td>
+                <td>{emp.name}</td>
+                <td className="hide-mobile">{emp.job}</td>
+                <td className="hide-mobile">{formatDate(emp.admission_date)}</td>
+                <td className="hide-mobile">{formatPhone(emp.phone)}</td>
+                <td className="show-mobile">
+                  <span className="arrow">{expanded === emp.id ? '▲' : '▼'}</span>
+                </td>
+              </tr>
+              {expanded === emp.id && (
+                <tr className="expanded-row show-mobile" key={`exp-${emp.id}`}>
+                  <td colSpan="3">
+                    <div className="expanded-content">
+                      <div><span>Cargo</span><span>{emp.job}</span></div>
+                      <div><span>Data de admissão</span><span>{formatDate(emp.admission_date)}</span></div>
+                      <div><span>Telefone</span><span>{formatPhone(emp.phone)}</span></div>
+                    </div>
+                  </td>
+                </tr>
+              )}
+            </>
           ))}
         </tbody>
       </table>
