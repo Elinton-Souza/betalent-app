@@ -58,7 +58,7 @@ function EmployeeTable() {
               </tr>
               {expanded === emp.id && (
                 <tr className="expanded-row show-mobile" key={`exp-${emp.id}`}>
-                  <td colSpan="3">
+                  <td colSpan="6">
                     <div className="expanded-content">
                       <div><span>Cargo</span><span>{emp.job}</span></div>
                       <div><span>Data de admissão</span><span>{formatDate(emp.admission_date)}</span></div>
