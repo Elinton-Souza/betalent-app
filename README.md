@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# BeTalent - Teste Técnico Front-End
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicação web desenvolvida como teste técnico para a BeTalent, que exibe uma tabela de funcionários com dados consumidos de uma API simulada.
 
-## Available Scripts
+## 🖥️ Tecnologias utilizadas
 
-In the project directory, you can run:
+- React.js
+- CSS puro
+- json-server (API simulada)
 
-### `npm start`
+## ✅ Funcionalidades
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Listagem de funcionários em tabela
+- Busca/filtro por nome, cargo e telefone
+- Formatação de datas (DD/MM/AAAA)
+- Formatação de telefones (+XX (XX) XXXXX-XXXX)
+- Layout responsivo
+- Accordion no mobile para exibir detalhes do funcionário
+    ### 💡 Detalhes sobre o Accordion (Mobile)
+        Para garantir que a experiência do usuário seja fluida em dispositivos móveis, implementei um sistema de **Accordion** que:
+            - **Prioriza Dados**: Exibe apenas Foto e Nome inicialmente.
+            - **Expansão sob Demanda**: Revela Cargo, Data de Admissão e Telefone apenas quando solicitado, evitando o scroll horizontal excessivo.
+            - **Estado Dinâmico**: Gerenciado via React Hooks, garantindo que a interface reaja instantaneamente ao clique do usuário.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📋 Pré-requisitos
 
-### `npm test`
+Antes de começar, você precisa ter instalado:
+- [Node.js](https://nodejs.org/)
+- [Git](https://git-scm.com/)
+- [json-server](https://github.com/typicode/json-server)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Como rodar o projeto
 
-### `npm run build`
+### 1. Clone o repositório da API simulada
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/BeMobile/desafio-front-end.git
+cd desafio-front-end
+npx json-server db.json
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Deixe este terminal rodando. A API estará disponível em `http://localhost:3000`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. Clone este repositório
 
-### `npm run eject`
+```bash
+git clone https://github.com/Elinton-Souza/betalent-app.git
+cd betalent-app
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 3. Instale as dependências
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 4. Inicie a aplicação
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm start
+```
 
-## Learn More
+A aplicação estará disponível em `http://localhost:3001`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📱 Layout
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+O projeto segue o layout fornecido no [Figma](https://www.figma.com/file/yw6th52zE9bubewc6ayTg5/Teste-T%C3%A9cnico-Front-End-Be.) com versões desktop e mobile.
