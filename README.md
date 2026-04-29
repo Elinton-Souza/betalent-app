@@ -16,11 +16,11 @@ Aplicação web desenvolvida como teste técnico para a BeTalent, que exibe uma 
 - Formatação de telefones (+XX (XX) XXXXX-XXXX)
 - Layout responsivo
 - Accordion no mobile para exibir detalhes do funcionário
-    ### 💡 Detalhes sobre o Accordion (Mobile)
-        Para garantir que a experiência do usuário seja fluida em dispositivos móveis, implementei um sistema de **Accordion** que:
-            - **Prioriza Dados**: Exibe apenas Foto e Nome inicialmente.
-            - **Expansão sob Demanda**: Revela Cargo, Data de Admissão e Telefone apenas quando solicitado, evitando o scroll horizontal excessivo.
-            - **Estado Dinâmico**: Gerenciado via React Hooks, garantindo que a interface reaja instantaneamente ao clique do usuário.
+### 💡 Detalhes sobre o Accordion (Mobile)
+Para garantir que a experiência do usuário seja fluida em dispositivos móveis, implementei um sistema de **Accordion** que:
+- **Prioriza Dados**: Exibe apenas Foto e Nome inicialmente.
+- **Expansão sob Demanda**: Revela Cargo, Data de Admissão e Telefone apenas quando solicitado, evitando o scroll horizontal excessivo.
+- **Estado Dinâmico**: Gerenciado via React Hooks, garantindo que a interface reaja instantaneamente ao clique do usuário.
 
 ## 📋 Pré-requisitos
 
